@@ -7,7 +7,7 @@ include = ["src"]
 
 [project]
 name = "fsd-benchmark"
-authors = [ { name = "Konstantinos Papazafeiropoulos", email = "kostas.papazafeiropoulos@tnp.eu"]
+authors = [ { name = "Konstantinos Papazafeiropoulos", email = "kostas.papazafeiropoulos@tnp.eu" } ]
 version = "0.1.0"
 description = "Calculation of FSD benchmark for the UK"
 readme = "README.md"
