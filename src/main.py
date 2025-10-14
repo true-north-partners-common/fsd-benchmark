@@ -33,7 +33,7 @@ def main() -> pl.LazyFrame:
     pp_lf, fsd_summary = merge_and_process_data(
         pp_lf, hpi_lf, postcode_lookup_lf
     )
-    return fsd_summary.collect()
+    return fsd_summary
 
 if __name__ == "__main__":
     df = main()
