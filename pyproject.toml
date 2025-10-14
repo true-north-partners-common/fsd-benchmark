@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+include = ["src"]
+
+[project]
+name = "fsd-benchmark"
+authors = [ { name = "Konstantinos Papazafeiropoulos", email = "kostas.papazafeiropoulos@tnp.eu"]
+version = "0.1.0"
+description = "Calculation of FSD benchmark for the UK"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "lxml>=6.0.2",
+    "pandas>=2.3.3",
+    "polars>=1.34.0",
+    "pyarrow>=21.0.0",
+]
