@@ -19,7 +19,7 @@ def main() -> pl.LazyFrame:
     """Main ETL pipeline function to fetch and process PP and HPI data.
 
     Returns:
-        pl.LazyFrame: Merged DataFrame containing both PP and HPI data.
+        pl.DataFrame: The final processed FSD summary.
     """
     pp_lf = fetch_pp_data(destination=DESTINATION_PATH / "pp.csv")
     hpi_lf = fetch_hpi_data(
@@ -30,10 +30,11 @@ def main() -> pl.LazyFrame:
     postcode_lookup_lf = fetch_postcode_lookup(
         destination=DESTINATION_PATH / "postcode_lookup.parquet"
     )
-    pp_lf, _fsd_summary = merge_and_process_data(
+    pp_lf, fsd_summary = merge_and_process_data(
         pp_lf, hpi_lf, postcode_lookup_lf
     )
-    return pp_lf
+    return fsd_summary.collect()
 
 if __name__ == "__main__":
-    main()
+    df = main()
+    print(df)
