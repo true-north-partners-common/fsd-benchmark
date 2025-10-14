@@ -7,7 +7,7 @@ resolution-markers = [
 ]
 
 [[package]]
-name = "fsd"
+name = "fsd-benchmark"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
